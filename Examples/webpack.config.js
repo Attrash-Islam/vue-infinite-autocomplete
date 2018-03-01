@@ -4,10 +4,7 @@ module.exports = {
   devtool: 'inline-source-map',
   resolve: {
     // Add `.ts` as a resolvable extension.
-    extensions: ['.webpack.js', '.web.js', '.ts', '.js']
-  },
-  externals: {
-    "vue": "Vue"
+    extensions: ['.webpack.js', '.web.js', '.ts', '.js'],
   },
   module: {
     rules: [

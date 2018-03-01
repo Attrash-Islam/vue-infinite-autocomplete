@@ -13,6 +13,9 @@ module.exports = {
       { test: /\.ts$/, loader: 'ts-loader' }
     ]
   },
+  externals: {
+    "vue": "Vue"
+  },
   plugins: [
 		new UglifyJSPlugin(),
 		new webpack.DefinePlugin({

@@ -9,8 +9,6 @@
     "switch-default": true,
     "no-default-export": true,
     "no-unused-expression": false,
-    "object-literal-shorthand": false,
-    "only-arrow-functions": false,
     "newline-before-return": true,
     "no-duplicate-imports": true,
     "no-require-imports": true,
