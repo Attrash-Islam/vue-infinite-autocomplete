@@ -1,70 +1,40 @@
 {
   "name": "vue-infinite-autocomplete",
+  "description": "Vue infinite-autocomplete wrapper",
   "version": "1.0.0",
-  "description": "Vue infinite-autocomplete Component",
-  "main": "index.js",
+  "author": "Islam Attrash <isattrash@gmail.com>",
+  "main": "dist/index.min.js",
   "scripts": {
-    "clean": "rimraf ./dist",
-    "build": "npm run clean && npm run build:umd && npm run build:umd:debug",
-    "watch": "npm run clean && npm run build:watch",
-    "build:watch": "webpack ./src/VueInifiniteAutoComplete.ts ./dist/index.debug.js --output-library-target=\"umd\" --watch",
-    "build:umd": "webpack ./src/VueInifiniteAutoComplete.ts ./dist/index.js --output-library-target=\"umd\" --config webpack.production.config.js",
-    "build:umd:debug": "webpack ./src/VueInifiniteAutoComplete.ts ./dist/index.debug.js --output-library-target=\"umd\"",
-    "prepublish": "npm run validate-build",
-    "validate-build": "npm run tslint && npm run build && npm run test",
-    "test": "echo \"Write tests!\"",
-    "test:watch": "karma start karma.conf.js --single-run false",
-    "tslint": "tslint --fix -c tslint.json 'src/**/*.ts' 'test/**/*.ts'"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --content-base='./demo/'",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Attrash-Islam/vue-infinite-autocomplete.git"
-  },
-  "keywords": [
-    "infinite-autocomplete",
-    "autocomplete",
-    "input",
-    "vue",
-    "vuejs",
-    "component",
-    "select",
-    "infinite autocomplete",
-    "typescript"
-  ],
-  "author": "Islam Attrash",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Attrash-Islam/vue-infinite-autocomplete/issues"
-  },
-  "homepage": "https://github.com/Attrash-Islam/vue-infinite-autocomplete#readme",
   "devDependencies": {
-    "@types/jasmine": "2.5.40",
-    "@types/vue": "2.0.0",
-    "coveralls": "2.11.15",
-    "es6-promise": "4.2.4",
-    "ghooks": "2.0.2",
-    "istanbul-instrumenter-loader": "1.2.0",
-    "jasmine-core": "2.5.2",
-    "karma": "1.3.0",
-    "karma-coverage": "1.1.1",
-    "karma-jasmine": "1.1.0",
-    "karma-phantomjs-launcher": "1.0.2",
-    "karma-source-map-support": "1.2.0",
-    "karma-webpack": "2.0.1",
-    "rimraf": "2.5.4",
-    "ts-loader": "3.1.1",
-    "tslint": "5.9.1",
-    "typescript": "2.5.3",
-    "uglifyjs-webpack-plugin": "1.0.1",
-    "vue": "2.5.13",
-    "webpack": "2.6.1"
+    "babel-core": "6.0.0",
+    "babel-eslint": "7.1.1",
+    "babel-loader": "6.0.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-runtime": "6.15.0",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-stage-2": "6.13.0",
+    "babel-runtime": "6.11.6",
+    "cross-env": "3.0.0",
+    "css-loader": "0.25.0",
+    "eslint": "3.14.1",
+    "eslint-config-airbnb-base": "11.0.1",
+    "eslint-friendly-formatter": "2.0.7",
+    "eslint-import-resolver-webpack": "0.8.1",
+    "eslint-loader": "1.6.1",
+    "eslint-plugin-html": "2.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "file-loader": "0.9.0",
+    "uglifyjs-webpack-plugin": "1.2.2",
+    "vue-loader": "11.1.4",
+    "vue-template-compiler": "2.2.1",
+    "webpack": "2.2.0",
+    "webpack-dev-server": "2.2.0"
   },
   "dependencies": {
     "infinite-autocomplete": "3.2.0"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run validate-build"
-    }
   }
 }

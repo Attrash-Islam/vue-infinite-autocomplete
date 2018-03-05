@@ -1,2 +1,3 @@
+# vue-infinite-autocomplete
 
-Under development
+Documentation not ready yet, but it's working!
