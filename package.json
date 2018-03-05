@@ -1,7 +1,7 @@
 {
   "name": "vue-infinite-autocomplete",
   "description": "Vue infinite-autocomplete wrapper",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Islam Attrash <isattrash@gmail.com>",
   "main": "dist/index.min.js",
   "scripts": {
