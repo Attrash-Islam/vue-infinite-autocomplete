@@ -11,6 +11,9 @@ via npm:
 $ npm i --save vue-infinite-autocomplete
 ```
 
+# Live Demo
+- <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Attrash-Islam/vue-infinite-autocomplete/master/demo/index.html">Live Demo</a>
+
 # Usage Example (See "demo" folder)
 
 ```vue
