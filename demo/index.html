@@ -36,6 +36,18 @@
             <div class='example-btn' @click='changeOptions'>change options</div>
           </div>
           <div class="example-item">
+            <h3> Async example</h3>
+            <vue-infinite-autocomplete
+              :get-data-from-api=getAsyncOptions
+              :fetch-size=2
+              :value=currentValue
+              v-on:select="handleOnSelect"
+              v-on:loading-state="handleLoadingStateChange"
+              v-on:error="handleError">
+            </vue-infinite-autocomplete>
+            <div class='example-btn' @click='changeOptions'>change options</div>
+          </div>
+          <div class="example-item">
             <h3>See Console Logs</h3>
           </div>
         </div>
@@ -90,6 +102,17 @@
           },
           handleError(error) {
             console.log("error: ", error);
+          },
+          getAsyncOptions(text, page, fetchSize) {
+            return new Promise((resolve, reject) => {
+              console.log(`searching ${text} in page: ${page}. fetchSize is: ${fetchSize}`);
+              setTimeout(() => {
+                resolve([
+                  { text: 'Shai ReznikY', value: 2 },
+                  { text: 'Uri ShakedZ', value: 3 },
+                ]);
+              }, 50);
+            });
           }
         }
       };
