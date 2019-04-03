@@ -1,7 +1,7 @@
 {
   "name": "vue-infinite-autocomplete",
   "description": "Vue infinite-autocomplete wrapper",
-  "version": "2.0.0",
+  "version": "4.1.1",
   "author": "Islam Attrash <isattrash@gmail.com>",
   "main": "dist/index.min.js",
   "scripts": {
@@ -35,6 +35,6 @@
     "webpack-dev-server": "^2.2.0"
   },
   "dependencies": {
-    "infinite-autocomplete": "3.2.0"
+    "infinite-autocomplete": "^4.1.1"
   }
 }

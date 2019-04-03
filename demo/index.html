@@ -27,23 +27,19 @@
           <div class="example-item">
             <h3> simple example</h3>
             <vue-infinite-autocomplete
-              :options=currentOptions
+              :data-source=currentOptions
               :value=currentValue
-              v-on:select="handleOnSelect"
-              v-on:loading-state="handleLoadingStateChange"
-              v-on:error="handleError">
+              v-on:select="handleOnSelect">
             </vue-infinite-autocomplete>
             <div class='example-btn' @click='changeOptions'>change options</div>
           </div>
           <div class="example-item">
             <h3> Async example</h3>
             <vue-infinite-autocomplete
-              :get-data-from-api=getAsyncOptions
+              :data-source=getAsyncOptions
               :fetch-size=2
               :value=currentValue
-              v-on:select="handleOnSelect"
-              v-on:loading-state="handleLoadingStateChange"
-              v-on:error="handleError">
+              v-on:select="handleOnSelect">
             </vue-infinite-autocomplete>
             <div class='example-btn' @click='changeOptions'>change options</div>
           </div>
@@ -60,56 +56,50 @@
           return {
             currentValue: "",
             currentOptions: [
-              { text: 'Islam Attrash', value: 1},
-              { text: 'Shai Reznik', value: 2},
-              { text: 'Uri Shaked', value: 3},
-              { text: 'Salsabel Eawissat', value: 4},
-              { text: 'Mohammed Attrash', value: 5},
-              { text: 'Mike Brocole', value: 6},
-              { text: 'John Stewart', value: 7},
-              { text: 'Stone Cold', value: 8},
-              { text: 'Triple H', value: 9},
-              { text: 'Sting The Stinger', value: 10},
-              { text: 'Superman', value: 11},
-              { text: 'Batman', value: 12},
-              { text: 'The Joker', value: '13'},
-              { text: 'Vanilla Icecream', value: '14'},
-              { text: 'Stephane macmahon', value: '15'},
-              { text: 'infinite autocomplete', value: '16'},
-              { text: 'Barak Obama', value: null},
-              { text: 'Bill Goldberg', value: 17},
-              { text: 'Inishtanispfl', value: 'whooo? whoo?'},
-              { text: 'Saloma', value: [1,2,3]},
-              { text: 'Yosra Eawissat', value: {object: true}},
-              { text: 'Medium Articles', value: 'what'}
+              { text: 'Islam Attrash', id: 1},
+              { text: 'Shai Reznik', id: 2},
+              { text: 'Uri Shaked', id: 3},
+              { text: 'Salsabel Eawissat', id: 4},
+              { text: 'Mohammed Attrash', id: 5},
+              { text: 'Mike Brocole', id: 6},
+              { text: 'John Stewart', id: 7},
+              { text: 'Stone Cold', id: 8},
+              { text: 'Triple H', id: 9},
+              { text: 'Sting The Stinger', id: 10},
+              { text: 'Superman', id: 11},
+              { text: 'Batman', id: 12},
+              { text: 'The Joker', id: '13'},
+              { text: 'Vanilla Icecream', id: '14'},
+              { text: 'Stephane macmahon', id: '15'},
+              { text: 'infinite autocomplete', id: '16'},
+              { text: 'Barak Obama', id: 'some-id'},
+              { text: 'Bill Goldberg', id: 17},
+              { text: 'Inishtanispfl', id: 'whooo? whoo?'},
+              { text: 'Saloma', id: 'saloma'},
+              { text: 'Yosra Eawissat', id: 'yosra'},
+              { text: 'Medium Articles', id: 'what'}
             ]
           }
         },
         methods: {
           changeOptions() {
             this.currentOptions = [
-              { text: 'Islam AttrashX', value: 1 },
-              { text: 'Shai ReznikY', value: 2 },
-              { text: 'Uri ShakedZ', value: 3 },
-              { text: 'Salsabel EawissatE', value: 4 }
+              { text: 'Islam AttrashX', id: 1 },
+              { text: 'Shai ReznikY', id: 2 },
+              { text: 'Uri ShakedZ', id: 3 },
+              { text: 'Salsabel EawissatE', id: 4 }
             ]
           },
-          handleOnSelect(target, selectedValue) {
+          handleOnSelect(selectedValue) {
             console.log("selected: ", selectedValue);
-          },
-          handleLoadingStateChange(loadingState) {
-            console.log("loading state: ", loadingState);
-          },
-          handleError(error) {
-            console.log("error: ", error);
           },
           getAsyncOptions(text, page, fetchSize) {
             return new Promise((resolve, reject) => {
               console.log(`searching ${text} in page: ${page}. fetchSize is: ${fetchSize}`);
               setTimeout(() => {
                 resolve([
-                  { text: 'Shai ReznikY', value: 2 },
-                  { text: 'Uri ShakedZ', value: 3 },
+                  { text: 'Shai ReznikY', id: 2 },
+                  { text: 'Uri ShakedZ', id: 3 },
                 ]);
               }, 50);
             });
