@@ -6,7 +6,6 @@
   "main": "dist/index.min.js",
   "scripts": {
     "prepublish": "npm run build",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --content-base='./demo/'",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "license": "MIT",
@@ -31,8 +30,7 @@
     "uglifyjs-webpack-plugin": "1.2.2",
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.1",
-    "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+    "webpack": "^2.2.0"
   },
   "dependencies": {
     "infinite-autocomplete": "^4.1.1"
